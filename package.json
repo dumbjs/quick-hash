@@ -2,15 +2,8 @@
   "name": "@dumbjs/quick-hash",
   "version": "0.0.1-beta.1",
   "description": "Quick non-cryptographic hash functions for strings",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
+  "license": "MIT",
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "exports": {
     ".": {
       "require": "./dist/cjs/index.js",
@@ -29,6 +22,11 @@
     },
     "./package.json": "./package.json"
   },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c",
     "next": "bumpp",
@@ -36,7 +34,6 @@
     "test:ci": "c8 npm run test"
   },
   "prettier": "@barelyhuman/prettier-config",
-  "license": "MIT",
   "devDependencies": {
     "@barelyhuman/prettier-config": "^1.1.0",
     "bumpp": "^9.2.0",
@@ -47,15 +44,7 @@
     "rollup-plugin-node-externals": "^6.1.2",
     "uvu": "^0.5.6"
   },
-  "dependencies": {
-    "@barelyhuman/astring-jsx": "^2.0.1",
-    "acorn": "^8.11.2",
-    "acorn-class-fields": "^1.0.0",
-    "acorn-import-assertions": "^1.9.0",
-    "acorn-jsx": "^5.3.2",
-    "acorn-jsx-walk": "^2.0.0",
-    "acorn-static-class-features": "^1.0.0",
-    "acorn-walk": "^8.3.0",
-    "sucrase": "^3.34.0"
+  "publishConfig": {
+    "access": "public"
   }
 }
