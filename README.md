@@ -1,5 +1,13 @@
 ![dumbjs/quick-hash](https://socialify.git.ci/dumbjs/quick-hash/image?description=1&name=1&owner=1&pattern=Solid&theme=Dark)
 
+- [Why?](#why)
+- [Usage](#usage)
+    - [dbj2](#dbj2)
+    - [sdbm](#sdbm)
+      - [Original Version](#original-version)
+      - [GAWK Version](#gawk-version)
+  - [License](#license)
+
 # Why?
 
 Tired of copying them around
