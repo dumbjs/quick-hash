@@ -4,25 +4,21 @@ import fs, { mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 
 const common = {
-  plugins: [nodeExternals(), inlinePlugin(), createPackages()],
+  plugins: [nodeExternals(), createPackages()],
 }
 
 /**
  * @return {import("rollup").RollupOptions[]}
  */
-function main() {
-  return [
-    ...createEntry('./src/index.js'),
-    ...createEntry('./src/djb2.js'),
-    ...createEntry('./src/sdbm.js'),
-  ]
-}
-
-function createEntry(entry) {
+export default function main() {
   return [
     {
       ...common,
-      input: entry,
+      input: {
+        index: './src/index.js',
+        djb2: './src/djb2.js',
+        sdbm: './src/sdbm.js',
+      },
       output: {
         dir: './dist/esm',
         format: 'esm',
@@ -30,51 +26,17 @@ function createEntry(entry) {
     },
     {
       ...common,
-      input: entry,
+      input: {
+        index: './src/index.js',
+        djb2: './src/djb2.js',
+        sdbm: './src/sdbm.js',
+      },
       output: {
         dir: './dist/cjs',
         format: 'cjs',
       },
     },
   ]
-}
-
-function inlinePlugin() {
-  return {
-    name: 'inline-plugin',
-    async transform(code, path) {
-      if (/(__inline_(\w+)[ ]?\=)/g.test(code)) {
-        // DO NOT REMOVE THESE, as they are used by `eval`
-        // to execute the inline path action
-        const fs = await import('node:fs')
-        const __dirname = dirname(path)
-        const { join } = await import('node:path')
-
-        return code.replace(
-          /(__inline_(\w+)\s?\=\s?(.+)[;]?[\n]?)/g,
-          (...matchers) => {
-            return `__inline_${matchers[2]} = \`${escapeJS(
-              eval(matchers[3])
-            )}\``
-          }
-        )
-      }
-    },
-  }
-}
-
-export default main
-
-function escapeJS(code) {
-  return escapeTemplateLiterals(escapeBackticks(code))
-}
-
-function escapeBackticks(code) {
-  return code.replace(/`/g, '\\`')
-}
-
-function escapeTemplateLiterals(code) {
-  return code.replace(/\$\{/g, '\\${')
 }
 
 /**
