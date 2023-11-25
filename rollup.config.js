@@ -68,18 +68,14 @@ function createPackages() {
     name: 'create-final-packages',
     async renderStart(info) {
       const pkg = {}
-      if (info.format == 'cjs') {
-        pkg.type = 'commonjs'
-      }
-      if (['esm', 'es'].includes(info.format)) {
-        pkg.type = 'module'
-      }
+      if (info.format == 'cjs') pkg.type = 'commonjs'
+
+      if (['esm', 'es'].includes(info.format)) pkg.type = 'module'
+
       const pkgPath = join(info.dir, 'package.json')
       await mkdir(info.dir, { recursive: true })
 
-      if (existsSync(pkgPath)) {
-        return
-      }
+      if (existsSync(pkgPath)) return
 
       await fs.writeFile(
         join(info.dir, 'package.json'),

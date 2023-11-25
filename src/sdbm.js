@@ -21,9 +21,8 @@ export function sdbm(toHash) {
 export function sdbmGawk(toHash) {
   let hash = BigInt(0)
 
-  for (let i = 0; i < toHash.length; i++) {
+  for (let i = 0; i < toHash.length; i++)
     hash = BigInt(toHash.charCodeAt(i)) + (hash << 6n) + (hash << 16n) - hash
-  }
 
   return '' + hash
 }

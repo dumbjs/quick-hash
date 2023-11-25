@@ -2,10 +2,10 @@
 
 - [Why?](#why)
 - [Usage](#usage)
-    - [dbj2](#dbj2)
-    - [sdbm](#sdbm)
-      - [Original Version](#original-version)
-      - [GAWK Version](#gawk-version)
+  - [dbj2](#dbj2)
+  - [sdbm](#sdbm)
+    - [Original Version](#original-version)
+    - [GAWK Version](#gawk-version)
   - [License](#license)
 
 # Why?
