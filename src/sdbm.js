@@ -1,3 +1,7 @@
+/**
+ * @param {string} toHash
+ * @return {string}
+ */
 export function sdbm(toHash) {
   let hash = BigInt(0)
   let c
@@ -10,6 +14,10 @@ export function sdbm(toHash) {
   return '' + hash
 }
 
+/**
+ * @param {string} toHash
+ * @return {string}
+ */
 export function sdbmGawk(toHash) {
   let hash = BigInt(0)
 

@@ -1,3 +1,7 @@
+/**
+ * @param {string} toHash
+ * @return {string}
+ */
 export const djb2 = function djb2(toHash) {
   let hash = 5381
   let c
