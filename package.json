@@ -4,6 +4,10 @@
   "description": "Quick non-cryptographic hash functions for strings",
   "license": "MIT",
   "type": "module",
+  "repository": "dumbjs/quick-hash",
+  "bugs": {
+    "url": "https://github.com/dumbjs/quick-hash"
+  },
   "exports": {
     ".": {
       "require": "./dist/cjs/index.js",
