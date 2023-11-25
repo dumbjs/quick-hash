@@ -2,9 +2,29 @@ import { dirname, join } from 'node:path'
 import { nodeExternals } from 'rollup-plugin-node-externals'
 import fs, { mkdir } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
+import typescriptPlugin from 'rollup-plugin-typescript2'
 
 const common = {
-  plugins: [nodeExternals(), createPackages()],
+  plugins: [
+    nodeExternals(),
+    createPackages(),
+    typescriptPlugin({
+      useTsconfigDeclarationDir: true,
+      include: ['./src/*.js+(|x)', './src/**/*.js+(|x)'],
+      exclude: ['**/node_modules/**/*', '**/tests/**/*'],
+      tsconfigDefaults: {
+        compilerOptions: {
+          declarationDir: './dist/types',
+          allowJs: true,
+          declaration: true,
+          skipLibCheck: true,
+          emitDeclarationOnly: true,
+        },
+        include: ['src'],
+        exclude: ['tests'],
+      },
+    }),
+  ],
 }
 
 /**
