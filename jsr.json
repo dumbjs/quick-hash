@@ -1,0 +1,5 @@
+{
+    "name": "@dumbjs/quick-hash",
+    "version": "0.0.2",
+    "exports": "./src/index.js"
+}
