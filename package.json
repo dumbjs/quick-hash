@@ -1,6 +1,6 @@
 {
   "name": "@dumbjs/quick-hash",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Quick non-cryptographic hash functions for strings",
   "license": "MIT",
   "type": "module",
@@ -46,7 +46,7 @@
     "src"
   ],
   "scripts": {
-    "prepare":"wrap2",
+    "prepare": "wrap2",
     "next": "bumpp",
     "test": "uvu",
     "fix": "eslint --fix .; prettier --write .",
