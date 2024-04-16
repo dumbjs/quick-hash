@@ -10,49 +10,57 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js",
-      "default": "./dist/esm/index.js"
+      "types": {
+        "require": "./dist/cjs/index.d.ts",
+        "import": "./dist/esm/index.d.ts"
+      },
+      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/esm/index.mjs",
+      "default": "./dist/esm/index.mjs"
     },
     "./djb2": {
-      "types": "./dist/types/djb2.d.ts",
-      "require": "./dist/cjs/djb2.js",
-      "import": "./dist/esm/djb2.js",
-      "default": "./dist/esm/djb2.js"
+      "types": {
+        "require": "./dist/types/djb2.d.ts",
+        "import": "./dist/types/djb2.d.mts"
+      },
+      "require": "./dist/cjs/djb2.cjs",
+      "import": "./dist/esm/djb2.mjs",
+      "default": "./dist/esm/djb2.mjs"
     },
     "./sdbm": {
-      "types": "./dist/types/sdbm.d.ts",
-      "require": "./dist/cjs/sdbm.js",
-      "import": "./dist/esm/sdbm.js",
-      "default": "./dist/esm/sdbm.js"
+      "types": {
+        "require": "./dist/types/sdbm.d.ts",
+        "import": "./dist/types/sdbm.d.mts"
+      },
+      "require": "./dist/cjs/sdbm.cjs",
+      "import": "./dist/esm/sdbm.mjs",
+      "default": "./dist/esm/sdbm.mjs"
     },
     "./package.json": "./package.json"
   },
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/cjs/index.d.ts",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "prepare":"wrap2",
     "next": "bumpp",
     "test": "uvu",
     "fix": "eslint --fix .; prettier --write .",
     "test:ci": "c8 npm run test"
   },
   "prettier": "@barelyhuman/prettier-config",
+  "wrap": {},
   "devDependencies": {
     "@barelyhuman/prettier-config": "^1.1.0",
     "bumpp": "^9.2.0",
     "c8": "^8.0.1",
     "eslint": "^8.54.0",
     "prettier": "^3.0.3",
-    "rollup": "^4.4.0",
-    "rollup-node-externals": "0.0.1-2",
-    "rollup-plugin-node-externals": "^6.1.2",
-    "rollup-plugin-typescript2": "^0.36.0",
+    "wrap2": "0.0.2-beta.3",
     "tslib": "^2.6.2",
     "typescript": "^5.3.2",
     "uvu": "^0.5.6"
