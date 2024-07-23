@@ -23,9 +23,9 @@ exception of the BigInt implementation of `sdbm`)
 [Details &rarr;](http://www.cse.yorku.ca/~oz/hash.html#djb2)
 
 ```js
-import { dbj2 as hash } from '@dumbjs/quick-hash'
+import { djb2 as hash } from "@dumbjs/quick-hash";
 // or
-// import { dbj2 as hash } from '@dumbjs/quick-hash/dbj2'
+// import { djb2 as hash } from '@dumbjs/quick-hash/djb2'
 
 hash('hello') //=>261238937
 ```
