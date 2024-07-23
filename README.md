@@ -18,7 +18,7 @@ The library exports a few quick string hashing functions that are widely used
 for proper bit distribution and short hashes for longer strings, (with the
 exception of the BigInt implementation of `sdbm`)
 
-### dbj2
+### djb2
 
 [Details &rarr;](http://www.cse.yorku.ca/~oz/hash.html#djb2)
 
