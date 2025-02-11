@@ -23,7 +23,7 @@ exception of the BigInt implementation of `sdbm`)
 [Details &rarr;](http://www.cse.yorku.ca/~oz/hash.html#djb2)
 
 ```js
-import { djb2 as hash } from "@dumbjs/quick-hash";
+import { djb2 as hash } from '@dumbjs/quick-hash'
 // or
 // import { djb2 as hash } from '@dumbjs/quick-hash/djb2'
 
