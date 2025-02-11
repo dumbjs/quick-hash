@@ -1,6 +1,6 @@
 {
   "name": "@dumbjs/quick-hash",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Quick non-cryptographic hash functions for strings",
   "bugs": {
     "url": "https://github.com/dumbjs/quick-hash"
