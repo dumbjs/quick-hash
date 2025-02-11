@@ -1,4 +1,4 @@
-export const djb2 = function djb2(toHash: string) {
+export const djb2 = function djb2(toHash: string): string {
   let hash = 5381
   let c
 

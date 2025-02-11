@@ -29,6 +29,9 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - name: JSR pre run
+        run: npx jsr publish --dry-run
+
       - name: Build
         run: pnpm build
 
