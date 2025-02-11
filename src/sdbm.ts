@@ -1,8 +1,4 @@
-/**
- * @param {string} toHash
- * @return {string}
- */
-export function sdbm(toHash) {
+export function sdbm(toHash: string) {
   let hash = BigInt(0)
   let c
 
@@ -14,11 +10,7 @@ export function sdbm(toHash) {
   return '' + hash
 }
 
-/**
- * @param {string} toHash
- * @return {string}
- */
-export function sdbmGawk(toHash) {
+export function sdbmGawk(toHash: String) {
   let hash = BigInt(0)
 
   for (let i = 0; i < toHash.length; i++)

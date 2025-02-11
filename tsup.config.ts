@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['./src/index.js', 'src/djb2.js', 'src/sdbm.js'],
+  entry: ['./src/index.ts', 'src/djb2.ts', 'src/sdbm.ts'],
   bundle: true,
   format: ['esm', 'cjs'],
   outDir: 'dist',

@@ -2,8 +2,8 @@
   "name": "@dumbjs/quick-hash",
   "version": "0.0.5",
   "exports": {
-    ".": "./src/index.js",
-    "./djb2": "./src/djb2.js",
-    "./sdbm": "./src/sdbm.js"
+    ".": "./src/index.ts",
+    "./djb2": "./src/djb2.ts",
+    "./sdbm": "./src/sdbm.ts"
   }
 }
