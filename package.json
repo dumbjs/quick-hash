@@ -2,69 +2,76 @@
   "name": "@dumbjs/quick-hash",
   "version": "0.0.4",
   "description": "Quick non-cryptographic hash functions for strings",
-  "license": "MIT",
-  "type": "module",
-  "repository": "dumbjs/quick-hash",
   "bugs": {
     "url": "https://github.com/dumbjs/quick-hash"
   },
+  "repository": "dumbjs/quick-hash",
+  "license": "MIT",
+  "type": "module",
   "exports": {
     ".": {
       "types": {
-        "require": "./dist/cjs/index.d.ts",
-        "import": "./dist/esm/index.d.ts"
+        "require": "./dist/index.d.cts",
+        "import": "./dist/index.d.ts"
       },
-      "require": "./dist/cjs/index.cjs",
-      "import": "./dist/esm/index.mjs",
-      "default": "./dist/esm/index.mjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./djb2": {
       "types": {
-        "require": "./dist/types/djb2.d.ts",
-        "import": "./dist/types/djb2.d.mts"
+        "require": "./dist/djb2.d.cts",
+        "import": "./dist/djb2.d.ts"
       },
-      "require": "./dist/cjs/djb2.cjs",
-      "import": "./dist/esm/djb2.mjs",
-      "default": "./dist/esm/djb2.mjs"
+      "require": "./dist/djb2.cjs",
+      "import": "./dist/djb2.js",
+      "default": "./dist/djb2.js"
     },
     "./sdbm": {
       "types": {
-        "require": "./dist/types/sdbm.d.ts",
-        "import": "./dist/types/sdbm.d.mts"
+        "require": "./dist/sdbm.d.cts",
+        "import": "./dist/sdbm.d.ts"
       },
-      "require": "./dist/cjs/sdbm.cjs",
-      "import": "./dist/esm/sdbm.mjs",
-      "default": "./dist/esm/sdbm.mjs"
+      "require": "./dist/sdbm.cjs",
+      "import": "./dist/sdbm.js",
+      "default": "./dist/sdbm.js"
     },
     "./package.json": "./package.json"
   },
-  "types": "./dist/cjs/index.d.ts",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "prepare": "wrap2",
+    "build": "tsup",
+    "fix": "prettier --write .",
     "next": "bumpp",
+    "prepare": "husky",
     "test": "uvu",
-    "fix": "eslint --fix .; prettier --write .",
     "test:ci": "c8 npm run test"
   },
+  "nano-staged": {
+    "*.{js,ts,yml,md,json}": [
+      "prettier --write "
+    ]
+  },
   "prettier": "@barelyhuman/prettier-config",
-  "wrap": {},
   "devDependencies": {
     "@barelyhuman/prettier-config": "^1.1.0",
-    "bumpp": "^9.2.0",
+    "bumpp": "^9.11.1",
     "c8": "^8.0.1",
-    "eslint": "^8.54.0",
-    "prettier": "^3.0.3",
-    "wrap2": "0.0.2-beta.3",
-    "tslib": "^2.6.2",
-    "typescript": "^5.3.2",
+    "husky": "^9.1.7",
+    "nano-staged": "^0.8.0",
+    "prettier": "^3.5.0",
+    "publint": "^0.3.4",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
     "uvu": "^0.5.6"
   },
+  "packageManager": "pnpm@10.3.0",
   "publishConfig": {
     "access": "public"
   }

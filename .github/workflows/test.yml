@@ -8,6 +8,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Corepack
+        run: npm i -g corepack@latest && corepack enable
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
@@ -16,6 +18,6 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Deps
-        run: npm ci
+        run: pnpm i --frozen-lockfile
       - name: Test
-        run: npm run test:ci
+        run: pnpm test:ci
