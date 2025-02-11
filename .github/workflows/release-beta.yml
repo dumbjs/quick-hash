@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Corepack
         run: npm i -g corepack@latest && corepack enable
 
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
